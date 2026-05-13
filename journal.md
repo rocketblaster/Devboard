@@ -38,19 +38,48 @@ And XTAL_32K_N and XTAL_32K_P for a 32kHz external clock input or output connect
 I think I'm not going for the 32kHZ external clock because I have a 40 MHz crystal. Connecting it to XTAL_N and XTAL_P.
 
 LDO pin I find out
-![LDO pin](LDO-pin.png)
+![LDO pin](attachments/LDO-pin.png)
 
 I don't know what CE and Vout goes to so I'll come back later.
 
 Uh oh I read through the XC6220 and it's PCBA only. Come back later. Anyways I since the USB-C says VBUS I changed it to VBUS. I also have CC1 and CC2 but wired it to 5.1k pullup resistors as usual
 
 My LDO needs capacitors to store some energy. I checked the data sheet and it says
-![LDO cap](ldo-cap.png)
+![LDO cap](attachments/ldo-cap.png)
 
 Maybe 47uF? Since it says voltage out. So I'm picking a 47uF capacitor then. But where does this go? After some researching, it seems my capacitor size depends on the crystal I have... I can 47 from what's recommended. It's hard to read. Datasheet wants a capacitor between VIN and VSS (ground). Same for VOut and VSS. Will also add somne net labels to the USB-C. I still have a CE pin left floating. It's an input pin. I will connect to Vin to keep it constantly on so it is open.
 
-![image](image1.png)
+![image](attachments/image1.png)
 
 I'm moving on to the MCU. I have a lot of pins that start with V. Let's start by reading the datasheet and seeing what it says.
 
 ### Time Spent: 1 Hour
+
+## May 12, 2026
+
+Alright where I left off on was trying to wire up the VDD pinouts. So I'm going to read the datasheet.
+
+![image](attachments/esp32-mcu.png)
+
+I wonder if I need any capacitors. It is unclear in the datasheet but maybe it is because i am not reading deep enough. But I guess they're all connected to capacitors which lead to ground. I'm following the hardware design schematic guide from the docs. I am told to connect 0.1uF or 100nF capacitors.
+
+"When using a single power supply, the recommended power supply voltage is 3.3 V and the output current is no less than 500 mA.
+
+It is suggested to add an ESD protection diode and at least 10 μF capacitor at the power entrance."
+
+I am going to add a 10uF capacitor at the power entrance. I don't know what to do with VDD_SPI, a digital pin. It seems it wants to connect a 1uF to ground according to the datasheet. I'll just follow it. Then I rename my designator labels so the numbers read left to right.
+
+![image](attachments/image2.png)
+
+![image](attachments/power-scheme.png)
+
+Oh also I found a better crystal. The one I originally found did not support 10.0ppm but this one does as it is also 40MHz. It is called [YXC Crystal Oscillators XL2EL89CPI-111YLC-40M](https://www.lcsc.com/product-detail/C5444549.html?s_z=n_q_t_40%2520mhz&spm=wm.fly.bg.0.xh___wm.ssy.tc.1.tz&lcsc_vid=QARcUlBTQQQLVlUEEVddVAJXRVhXUwYHT1YKX1xQQAUxVlNRT1daXlVXRlZeVTsOAxUeFF5JWBYZEEoKFBINSQcJGk4eFQsCAgIaFA%3D%3D)
+
+Its load capacitance is 10uF or 20uF
+Maybe I will try a 10uF.
+
+C = 2(10-5) C
+
+Just in case, and I end up with 10uF capacitors each. Next, some research of the docs told me to connect the USB D and N pairs to GPIO 18 and 19. I still need to figure out how the decoupling capacitors works... Moreso of its organization. i'll figure the rest of the pinouts in the next day.
+
+### Time Spent: 1 Hr
