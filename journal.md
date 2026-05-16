@@ -83,3 +83,39 @@ C = 2(10-5) C
 Just in case, and I end up with 10uF capacitors each. Next, some research of the docs told me to connect the USB D and N pairs to GPIO 18 and 19. I still need to figure out how the decoupling capacitors works... Moreso of its organization. i'll figure the rest of the pinouts in the next day.
 
 ### Time Spent: 1 Hr
+
+## May 15, 2026
+
+I wonder what I should add to my development board. I'm going to creaate net labels for the rest of my schematic. The ESP32-C3 has a couple of switches, I wonder what it does. So I'll add switches, status lights and connectors. To make it different from my guided tutorial, I will change the shape and silkscreen slightly.
+
+GPIO is programmable pin outputs. This means I could program the ESP32 and change GPIO1 to be the swtich button or something. So any GPIO pin can be a feature I can add on the board. But there are specific pins as said here
+
+![image](attachments/boot.png)
+
+Boot needs a weak pull up resistor so I'm adding 10k ohm. For reset I'm going to add a capacitor of 1uF just to be safe. I am going to create net labels for UORXD and UOTXD. They stand for Receiver and Transmitter respectively. Yeah I'm not sure what to connect it to. For LN_IN that is a radio. I don't have a use so I'll just give it a net label. Maybe I will try to termiante it. No it goes to an antenna. I will add one. I am following the schematic diagram right now. The SPI pins are like flash. I'm adding net labels because the resistors make it look unorganized.
+
+![image](attachments/image4.png)
+
+Seems like CHIP_EN is some sort of reset pin. This function of the pin is "High: on, enables the chip (powered up).
+Low: off, disables the chip (powered down).
+Note: Do not leave the CHIP_EN pin floating"
+
+Some sort of power pin I suppose. I wonder if I need multiple status lights. I'll do two, since this is a small LED. The configuration I have for the LED seems unusual, so I will change it. I will leave one connected to VBUS as an indicator of it being turned on. Maybe one for blink effect too and it'll be blue. It'll be connected to a GPIO pin, wonder which one is open. If space allows, I'll add a green one! I connected the LED to GPIO8.
+
+I noticed a flash when referencing the hardware design guide. I am powering it through USB-C so i dont think I need a flash. I'll still add it just in case. This particular part I picked was from research and it supports 128 something. I'll probably use that much lol
+
+![image](attachments/image5.png)
+
+I'm removing the VDD_SPI whatever I put on there. Stil adding a capacitor to stablzie signals. Design gudie says 0 ohms, but another person put 100 on theirs. I'll probably do 0 ohm for mine because it is flexible. ugh but schematic gets crowded. Well I figured it out, I place it real close on the wire lines.
+
+Now I need to move on to whatever's left for the schematic. How many connector pins do I want on my development board. How many pins do I have to connect? Would I put all my pins to one side or on both? Doing male headers because they're more durable and stack some jumpers on top too.
+
+I guess I will add inductors because I cannot omit them as a bare bones chip. The values for RF Antenna is too be decided by the actual PCB traces, and the crystal I must calculate. I think 24nH is an ok value for inductor.
+
+Still thinking about the connectors. I think I have GPIO0, GPIO1, GPIO10, GPIO4, GPIO5, GPIO6, GPIO7, TXD and RXD open. I need to include a place for 3v3 and GND as well. So that's about 9 slots plus 2 more which is 11. Maybe I'll add one more option for VBUS as well. I know there is 5v option but it needs to go downscale in volts... I guess I'll do a lopsided amount of connectors then. GPIO8, GPIO3, GPIO3 are used by the diodes. A symmetrical pattern. Oh! also for boot and reset pins too. Added those! Now it fits.
+
+Wooo here's the schematic so far!
+
+![image](image6.png)
+
+### Time Spent: 2 Hours
