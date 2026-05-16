@@ -114,8 +114,8 @@ I guess I will add inductors because I cannot omit them as a bare bones chip. Th
 
 Still thinking about the connectors. I think I have GPIO0, GPIO1, GPIO10, GPIO4, GPIO5, GPIO6, GPIO7, TXD and RXD open. I need to include a place for 3v3 and GND as well. So that's about 9 slots plus 2 more which is 11. Maybe I'll add one more option for VBUS as well. I know there is 5v option but it needs to go downscale in volts... I guess I'll do a lopsided amount of connectors then. GPIO8, GPIO3, GPIO3 are used by the diodes. A symmetrical pattern. Oh! also for boot and reset pins too. Added those! Now it fits.
 
-Wooo here's the schematic so far!
+Wooo here's the schematic so far! I did a lot of organization mostly though. Waiting on specific values for PCB.
 
-![image](image6.png)
+![image](attachments/image6.png)
 
 ### Time Spent: 2 Hours
