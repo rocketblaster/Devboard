@@ -119,3 +119,12 @@ Wooo here's the schematic so far! I did a lot of organization mostly though. Wai
 ![image](attachments/image6.png)
 
 ### Time Spent: 2 Hours
+
+## May 16, 2026
+
+I am getting to work by adding power flags. I wonder what shape my PCB should be. Why does my GHND have no input power pin. There seems to be 15 open total pins but I only have 12 at the moment. Adding one more set of connectors. Just want one power source. Then I want four mounting holes. Now I need to assign footprints. I'm going with 0603 footprints because they're simpler to solder. For RF_Antenna footprint I searched it up and it says there are many types. I'm thinking of going with a ceramic antenna since my module may be small. But I'll check the docs just in case. Probably a Johansen connector chip. For mounting holes I'm going with m2 screws because they're most accessible and in between. I need to transfer footprints over.
+
+Spent forever trying to import the easy eda USB-C aghh. figured it out by running python script path and command. Assigned usual footprints. Not sure for mounting holes, buttons and the inductors. I guess I will go with the usual footprint for a button. It looks like 6x6mm is the standard but is not in KiCad by default. I'll use 0201 or 0603 for the inductors. I'm going to use the part number C720477.
+Okay i got all of my footprints besides the mounting holes lol.
+
+### Time Spent: ~1 Hour
