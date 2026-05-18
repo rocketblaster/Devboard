@@ -128,3 +128,23 @@ Spent forever trying to import the easy eda USB-C aghh. figured it out by runnin
 Okay i got all of my footprints besides the mounting holes lol.
 
 ### Time Spent: ~1 Hour
+
+## May 17, 2026
+
+Adding mounting hole footprint finally. I import them all into the PCB. Now I create a 100mm by 100mm square. Well it has to be under. I'll try a rectangular shape and experiment with board outlines. Mostly filmed on lapse. Need some capacitors to be close together. Also I think it is best to hide silkscreen... Dev boards dont really need silkscreen labels. I have a feeling I want to swap GPIO 10 and CHIP_EN, and swap 3v3 and VBUS because of overlapping ratlines. Ugh I should've picked pins that are next too each other. I'm switching out GPIO8 for something else. Switch to GPIO9 with the boot switch. Then GPIO9 I will swap for... GPIO4 works. Doing a lot of swapping and making sure there aren't duplicates. Not sure for this extra pin connector... I have an extra slot.
+
+![image](attachments/image7.png)
+
+Probably will leave an extra anyways. For the memory flash I think vias are my only option. Perhaps I should go for a 4 layer board. I'll read through the design guide. Forgot to give UATXD a resistor! I need to place my resistors close to the ESP32-C3 for the flash. Definetely need vias and they're ok! GPIO pins last.
+
+![image](attachments/image8.png)
+
+My crystal footprint is giant. The correct package is SMD3225. I'm routing all my power supply on the third layer! With some exceptions. I need to keep the RF and Crystal clean of anything underneath as well.
+
+had to swap some values too liek GPIO because of the ratlines on the schematic.
+
+I hate how I have so many vias. Cant do anything about it. AAAAA And my traces are all weirdly long. I just need to get rid of the silkscreen value designators now. Oh I also need labels for pin headers. Next time...
+
+![image](attachments/image9.png)
+
+### Time Spent: 4 Hours
