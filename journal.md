@@ -148,3 +148,46 @@ I hate how I have so many vias. Cant do anything about it. AAAAA And my traces a
 ![image](attachments/image9.png)
 
 ### Time Spent: 4 Hours
+
+
+## May 18, 2026
+
+Development board here... So close. I added some silskcreen labels and credits to myself for making this cool awesomesauce development board. Would like to add graphics but I'm not feeling it. I put my silkscreen on the top because I want people to see it as form of accessibility. Oh DRC I need to fix the clearance errors. I am searching up JLCPCB clearances. Uh i realized some pads are overlapping. Ok net classes set to 0.09mm clearance as said my JLCPCB. How do I un clear the clearance on my USB-C? Some items forgot to connect so I'm rerouting some areas. It's time I ignore the pad errors from DRC. Now I want to update my GitHub Repo to make it polished! Sparkles!
+
+![image](attachments/image10.png)
+![image](attachments/schematic.png)
+![image](attachments/image11.png)
+
+I can see a few maybe unruly routing. But I'm rushing to get this done so I can do homework! I need freedom. I think it still works fine hopefully. One more thing, crystal be in the keep-out zone. So I added it and rerouted some vias too.
+
+Need to work on my BOM next. For mounting hole and Pin header im not going to include them becasue I know a place where to get pin headers. My antenna im not sure i have to look it up. RF components need to be 0201.
+
+Oh wait i still need to calculate the values for c14 and c15. Maybe I will go with L3 value is 2.4nH, both C14 and C15 will have a value of 1.2pF. Just needed to pick something but it is also within range.
+
+47uF C140782
+1uF C15849
+0.1uF C15849
+10nF C100042
+10uF C96446
+1.2pF C85895
+RED LED C19171390
+BLUE LED C965807
+GREEN LED C19273151
+Type-c C2765186
+2.0nH C86125
+24nH C49247134
+3.0nH C98044
+5.1k C2907044
+10k C2930027
+0 ohm C100044 (1%)
+499 ohm C2933227
+buttons C720477
+LDO C86534
+ESP32-C3 C2838500
+Memory flash C97521
+crystal C5444549
+
+Ok that should be all I typed in. Now I find an antenna that works. It has to be 2.4GHz and I found a 1206
+SO rf antenna C293767 means I have to change footprint. Doesn't seem to fit what is in the library currently. Come back later
+
+### Time spent: 2.5 Hours
