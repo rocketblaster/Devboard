@@ -155,7 +155,7 @@ I hate how I have so many vias. Cant do anything about it. AAAAA And my traces a
 Development board here... So close. I added some silskcreen labels and credits to myself for making this cool awesomesauce development board. Would like to add graphics but I'm not feeling it. I put my silkscreen on the top because I want people to see it as form of accessibility. Oh DRC I need to fix the clearance errors. I am searching up JLCPCB clearances. Uh i realized some pads are overlapping. Ok net classes set to 0.09mm clearance as said my JLCPCB. How do I un clear the clearance on my USB-C? Some items forgot to connect so I'm rerouting some areas. It's time I ignore the pad errors from DRC. Now I want to update my GitHub Repo to make it polished! Sparkles!
 
 ![image](attachments/image10.png)
-![image](attachments/schematic.png)
+![image](attachments/image14.png)
 ![image](attachments/image11.png)
 
 I can see a few maybe unruly routing. But I'm rushing to get this done so I can do homework! I need freedom. I think it still works fine hopefully. One more thing, crystal be in the keep-out zone. So I added it and rerouted some vias too.
@@ -191,3 +191,7 @@ Ok that should be all I typed in. Now I find an antenna that works. It has to be
 SO rf antenna C293767 means I have to change footprint. Doesn't seem to fit what is in the library currently. Come back later
 
 ### Time spent: 2.5 Hours
+
+## May 19, 2025
+
+Part number C89334 for the RF seems good after some specific keywords. Kept same footprint because its is 2.4GHz OK BOM is done. I also changed up the PCB too. Ok what's next? I hope I'm done. Uploaded it and BOM exports fine! I now need to organize my GitHub. Somehow my fab toolkit got uninstalled.
