@@ -17,4 +17,4 @@ This is a development board PCB made with a bare bones ESP32-C3. It can support 
 
 ## PCB
 
-![PCB](attachments/PCB.png)
+![PCB](attachments/pcb.png)
