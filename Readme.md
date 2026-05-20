@@ -5,7 +5,7 @@ This is a development board PCB made with a bare bones ESP32-C3. It can support 
 
 ## KiCanvas
 
-[Demo Link]()
+[Demo Link](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2Frocketblaster%2FDevboard%2Ftree%2Fmain%2Fsrc%2Fkicad)
 
 ## Schematic
 
