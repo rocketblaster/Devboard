@@ -11,10 +11,10 @@ This is a development board PCB made with a bare bones ESP32-C3. It can support 
 
 ![Schematic](attachments/schematic.png)
 
-## Render
-
-![Render](attachments/render.png)
-
 ## PCB
 
 ![PCB](attachments/pcb.png)
+
+## Render
+
+![Render](attachments/render.png)
