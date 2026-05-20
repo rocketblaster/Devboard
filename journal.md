@@ -195,3 +195,5 @@ SO rf antenna C293767 means I have to change footprint. Doesn't seem to fit what
 ## May 19, 2025
 
 Part number C89334 for the RF seems good after some specific keywords. Kept same footprint because its is 2.4GHz OK BOM is done. I also changed up the PCB too. Ok what's next? I hope I'm done. Uploaded it and BOM exports fine! I now need to organize my GitHub. Somehow my fab toolkit got uninstalled.
+
+## Time spent: Probably 30 minutes.
