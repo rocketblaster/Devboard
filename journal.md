@@ -270,6 +270,17 @@ Now I need to find new LCSC parts. The capacitors I pick have high voltage just 
 
 There are mistakes in here because I didn't update the footprint. Now it is correct since I changed it. Ran into technical issues bruh Fab toolkit won't export my files because of the 45 degrees. Guess I'll manually export then. Nvm I updated the plugin and now it works.
 
+After some reviewing, my updated changes checklit include
+- Move antenna to the edge on the side
+- Change footprint from 0201 to 0402 to make it easier for myself except for the antenna
+- maybe make the LDO capacitors big 0603 or 0805 because of many volts...
+- new footprints means finding new part numbers yayy
+
+Updated all the resistor footprints to 0603. Same for capacitors to 0402 except for 10uF. L1 and L2 updated to 0402. Ugh PCB to be wired again. Rework data lines that's crowded. All I did was rearrange it seems. I hope this is it. Also I stil need to find new part numbers... Capacitors ill bring in high tolerance.
+
+![image](attachments/image24.png)
+
+
 ## Time Spent: 2 Hours
 
 Total time spent: Around 17.75 hours.
