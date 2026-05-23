@@ -192,10 +192,84 @@ SO rf antenna C293767 means I have to change footprint. Doesn't seem to fit what
 
 ### Time spent: 2.5 Hours
 
-## May 19, 2025
+## May 19, 2026
 
 Part number C89334 for the RF seems good after some specific keywords. Kept same footprint because its is 2.4GHz OK BOM is done. I also changed up the PCB too. Ok what's next? I hope I'm done. Uploaded it and BOM exports fine! I now need to organize my GitHub. Somehow my fab toolkit got uninstalled.
 
 ### Time spent: Probably 30 minutes.
 
-Total time spent: Around 14 hours.
+## May 21, 2026
+
+My project is missing many key variables. The feedback included
+- No routing ground, use via instead
+- Use one via per pad
+- Impendence match RF antenna
+- Relayout RF antenna placement using the design guide
+- Dont use 0 ohm resistor
+- Crystal does not need keep out zone
+- LDO wired incorrectly
+
+I want to work on rerouting some regions though. I have a place where my I have more than one via per pad. The 0 ohm thing is only the footprint. Maybe I'll pick a 22 ohm resistor then as recommended as mentioned in the guide for 0 ohm footprint. Or no. The footprint is whatever matches. Oh and adjust my RF antenna capacitor and inductor values!
+
+First I'll get started on removing any places where I routed ground. I did it for the crystal and removed keep out so it's been changed. Changing how I wired up the LDO means I'll have to replace my components. let me focus on the LDO wiring as well as changing from 0 ohm to 22 ohm. For the LDO im going to copy the schematic diagrams then.
+
+The data sheet for XC6220 mentions
+CE is on/off. So input. Chip enable.
+Vin is power input
+Vss is ground
+Vout is output
+NC is no connect.
+I also need load capacitors. Some 10uF. Then load from Vout. I still keep 47uF for load most likely. I have Type B so CE doesn't have pull-down resistor but it has C Load discharge. I will add a pull-down resistor. My Vin is the input, so from USB-C and output should be 3v3. I still want to keep my LDO on so I'm connecting CE to Vin. Because CE uses input voltage to determine if it is on or off. I've already connected Vbus to it so it is ok. Then Vout leads to another 10uF capacitor and a load so my ESP32-C3 somehow. I picked 47uF for my load. But I'm using 10uF so I guess I'll switch to 4.7uF for my output according to the datasheet. Also these components on the PCB need to be close to each other. I see the +3v3 goes to the VDD3P3, just through net flags. Uh oh. I have two voltage powers pins connected let me fix that. That's the only diffeence from my original, so I have no idea what was even wired incorrectly. Capacitors have to go to ground too becasue the datasheet said it is between Vin and Vss.
+
+I will change where Boot connects to now. It goes to ground with a pull down resistor too. I think I will change GPIO8 to GPIO9. And and change footprints! For 4.7uf footprint it'll be C19666
+
+As for the flash lines, I will replace the 0 ohm resistor with 22 ohm becasue of USB-C pairing. I'll go with part number C23345. Ok it's been changed. I think that's all for the schematic. There's alot to be changed...
+
+I now want to move everything! Let me relocate boot, reset, and the pin headers containing 3v3 and vbus. Focus is to have optimal placement of RF antenna. Says to use 0201 which I should have. Needs to be close to the antenna in a zigzag. I'm going to need a ground stub for capacitor. RF trace should be routed at 135 degrees. Do not route traces underneath RF trace and no high frequency signals routed close. Stay away from USB, USB serial, and UART signal lines. UART should be surrounded by ground copper and signal vias. Connect stub via third layer. Need a 50 ohm impendence. Follow the table provided. Ok maybe my layout is too pour because I keep having to route traces underneath it ahhhhh
+
+I am thinking of adding an esd protection diode, I'll wait until i can route though. Maybe my power supply needs some work on placement. It says to add 10uF capacitor before the power trace enters the chip. I will put it near chip then.
+
+Power supply for pin 2 and pin 3 are RF related. so I need to place a 10uF capacitor for each pin OR 0.1 or 1uF cap in parallel. I have those! Near pin2 and 3 I need to add an CLC or LC filter ciruit contianing an inductor to supress signals. Recommend to use 0201 components except for 10uF. Change footprints now then oof. also LCSC part number. Except for LDO. Now they're all small. GPIO pin to headers are done last.
+
+The chip ground needs to have at least 9 vias. I wonder why. Add later. At least two vias is ok for power supply it says.
+
+![image](attachments/image16.png)
+
+### Time Spent: 1.75 Hours
+
+## May 22, 2026
+
+I think the pin header needs a big overhaul sad
+
+![image](attachments/image17.png)
+
+Now i can I add the labels without forcing my crystal to move closer to my RF antenna. Simply have to move onto backside. also now I have to round around RF trace. LN_IN i guess.
+
+![image](attachments/image18.png)
+
+Yeah I got it somehow. This is ok! I think so? no overlapping traces under RF antenna. Most worried about crystal oscillator. I don't see any traces underneath so it is fine. The labels do fit! Ok I was worried. Also I rerouted everything so nothing goes under the antenna.
+
+![image](attachments/image19.png)
+
+After relaying out my RF antenna I want to match 50 ohm impendence. Oh no my crystal has digital signals undernearth it! I now need to relocate the rf antenna yet again. oh crystal needs to be away from inductor oh ok
+
+Moved the crystal slightly to the right out of the tracks way on the bottom. Ok now the layout is working. Now everything shoudld be working fine. Labels hard to read, I'll note down for the next time.
+
+![image](attachments/image20.png)
+
+Now I focus on my impendence matching. I need to change stackup and convert some units. Ok changed my stackup mm and it is short and thin now. I'll round my values to whole numbers if i'm allowed to. Or I can keep this way it's fine.
+
+Ok now I need to determine the values of the load for the RF antenna for RF tuning. Hmm I'll go with what I have because my design follows the PCB layout guide.
+
+![image](attachments/image21.png)
+
+Now I need to find new LCSC parts. The capacitors I pick have high voltage just in case. BOM done. Need to reupload and update the README to repo.
+
+![image](attachments/image22.png)
+![image](attachments/image23.png)
+
+There are mistakes in here because I didn't update the footprint. Now it is correct since I changed it. Ran into technical issues bruh Fab toolkit won't export my files because of the 45 degrees. Guess I'll manually export then. Nvm I updated the plugin and now it works.
+
+## Time Spent: 2 Hours
+
+Total time spent: Around 17.75 hours.
