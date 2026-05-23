@@ -283,4 +283,4 @@ Updated all the resistor footprints to 0603. Same for capacitors to 0402 except 
 
 ## Time Spent: 3 Hours
 
-Total time spent: Around 17.75 hours.
+Total time spent: Around 18.75 hours.
