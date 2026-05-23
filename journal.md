@@ -279,8 +279,17 @@ After some reviewing, my updated changes checklit include
 Updated all the resistor footprints to 0603. Same for capacitors to 0402 except for 10uF. L1 and L2 updated to 0402. Ugh PCB to be wired again. Rework data lines that's crowded. All I did was rearrange it seems. I hope this is it. Also I stil need to find new part numbers... Capacitors ill bring in high tolerance and value just to be safe.
 
 ![image](attachments/image24.png)
+![image](attachments/image25.png)
+![image](attachments/image26.png)
 
+### Time Spent: 3 Hours
 
-## Time Spent: 3 Hours
+## May 23, 2026
 
-Total time spent: Around 18.75 hours.
+Planned on changing the dimensions of a board to nice numbers and I might change my 4.7uF capacitor for LDO to a 0603 one. Have to redo my render and PCB image obviously. New dimensions 47 by 35. had to fit in the mounting holes tho. I still have space so im switching to 0603. Doing some final clean up. I wanna add more silkscreen somehow. Again I reupload my source code files too.
+
+I want to find some cool silkscreen graphics I wonder what I can add... Well I don't have anything interesting so I won't add it for now.
+
+### Time Spent: 0.5 hours
+
+Total time spent: Around 19.5 hours.
