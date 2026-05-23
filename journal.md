@@ -276,7 +276,7 @@ After some reviewing, my updated changes checklit include
 - maybe make the LDO capacitors big 0603 or 0805 because of many volts...
 - new footprints means finding new part numbers yayy
 
-Updated all the resistor footprints to 0603. Same for capacitors to 0402 except for 10uF. L1 and L2 updated to 0402. Ugh PCB to be wired again. Rework data lines that's crowded. All I did was rearrange it seems. I hope this is it. Also I stil need to find new part numbers... Capacitors ill bring in high tolerance.
+Updated all the resistor footprints to 0603. Same for capacitors to 0402 except for 10uF. L1 and L2 updated to 0402. Ugh PCB to be wired again. Rework data lines that's crowded. All I did was rearrange it seems. I hope this is it. Also I stil need to find new part numbers... Capacitors ill bring in high tolerance and value just to be safe.
 
 ![image](attachments/image24.png)
 
