@@ -4521,6 +4521,12 @@
 		(uuid "7de1f3d5-c010-43cf-80ca-d03f192529e4")
 	)
 	(junction
+		(at 160.02 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7eea0e53-61c1-48d2-a31a-0d3b3c395fea")
+	)
+	(junction
 		(at 64.77 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4549,12 +4555,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c31c495b-8084-43e1-9477-7db5df2b512e")
-	)
-	(junction
-		(at 160.02 151.13)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c6a0f878-21d8-498c-8709-6866434846ea")
 	)
 	(junction
 		(at 100.33 41.91)
@@ -8299,84 +8299,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 160.02 158.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3ad576e0-2127-4cae-88f4-135d13b38fc8")
-		(property "Reference" "#PWR024"
-			(at 160.02 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 160.02 163.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 160.02 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 160.02 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 160.02 158.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e442d0a3-92dd-41d4-a3f8-9187937c0dbf")
-		)
-		(instances
-			(project "Devboard"
-				(path "/b2b70760-826f-4f05-b18d-4f006907a185"
-					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 96.52 102.87 0)
 		(unit 1)
 		(body_style 1)
@@ -10639,7 +10561,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10pF"
 			(at 171.45 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10683,7 +10605,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C96446"
+		(property "LCSC Part" "C1634"
 			(at 167.64 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -11080,7 +11002,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 160.02 154.94 0)
+		(at 160.02 147.32 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11088,10 +11010,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "82d3af85-e463-4aae-bf00-b128df265992")
 		(property "Reference" "R4"
-			(at 162.56 153.6699 0)
+			(at 155.194 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11102,7 +11023,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 162.56 156.2099 0)
+			(at 155.194 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11113,7 +11034,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 158.242 154.94 90)
+			(at 158.242 147.32 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11124,7 +11045,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 154.94 0)
+			(at 160.02 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11135,7 +11056,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 160.02 154.94 0)
+			(at 160.02 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11146,7 +11067,7 @@
 			)
 		)
 		(property "LCSC Part" "C2930027"
-			(at 160.02 154.94 0)
+			(at 160.02 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11157,7 +11078,7 @@
 			)
 		)
 		(property "KLC_S3.3" ""
-			(at 160.02 154.94 0)
+			(at 160.02 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11168,7 +11089,7 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 160.02 154.94 0)
+			(at 160.02 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13683,7 +13604,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10pF"
 			(at 156.21 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13727,7 +13648,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C96446"
+		(property "LCSC Part" "C1634"
 			(at 152.4 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -13848,6 +13769,84 @@
 			(project "Devboard"
 				(path "/b2b70760-826f-4f05-b18d-4f006907a185"
 					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 160.02 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c8e9bad9-98db-4380-af60-ad7dbc06f2e7")
+		(property "Reference" "#PWR011"
+			(at 160.02 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 160.02 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 160.02 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "687c9cd1-dd77-4ad3-b681-9c8d95ef288e")
+		)
+		(instances
+			(project "Devboard"
+				(path "/b2b70760-826f-4f05-b18d-4f006907a185"
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)

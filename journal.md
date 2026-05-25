@@ -292,4 +292,16 @@ I want to find some cool silkscreen graphics I wonder what I can add... Well I d
 
 ### Time Spent: 0.5 hours
 
-Total time spent: Around 19.5 hours.
+## May 25, 2026
+
+More feedback
+- incorrect load capacitor values
+- pull down resistor for boot will bring to low state always
+
+Ok i read my data sheet for the crystal it says 10pF or 20pF. What to pick. C stray is between 2pF and 5pF or 4pF to 6pF. I would go higher to minimize stray? yeah im picking 20pF. I'm guessing to subtract 6pF. Keeping 0603 footprint since it's ok and also I have space for it I think.
+2(10-4) = 5pF
+I'm going to change pull down to pull up but it means having to reroute it just a tiny bit!
+
+### Time Spent: 0.5 Hours
+
+Total time spent: Around 20 hours.
