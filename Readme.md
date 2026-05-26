@@ -5,6 +5,15 @@ This is a 47x35mm development board PCB made with a bare bones ESP32-C3. It can 
 
 There's a red power LED near USB-C. Blue and green located on top for testing LED on top for testing LED.
 
+## Case
+
+![image](attachments/case.png)
+![image](attachments/pcb_case.png)
+
+## Demo Case
+
+[3D case demo link](https://a360.co/3RtKpME)
+
 ## KiCanvas
 
 [Demo Link](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2Frocketblaster%2FDevboard%2Ftree%2Fmain%2Fsrc%2Fkicad)
